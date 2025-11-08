@@ -1,9 +1,9 @@
 
-# Now playing indicator Enhanced
+# Audio Tab Stripe
 
 Display an indicator on the 'Now playing' tab when the sidebar is collapsed. This is helpful if you've installed the 'Hide tab mute' Zen browser theme and want to quickly identify which tab is currently playing sound.
 
-This is a fork of [benstone326](https://github.com/benstone326/zen-mods), which has not been updated for over a year. This fork represents a fresh start with significant improvements and starts at version 1.0.0.
+This is a fork of [benstone326: Now playing indicator](https://github.com/benstone326/zen-mods), which has not been updated for over a year. This fork represents a fresh start with significant improvements and starts at version 1.0.0.
 
 ## Version 1.0.0
 
