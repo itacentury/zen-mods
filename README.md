@@ -1,7 +1,7 @@
 # Published Mods in Zen Theme Store
 
-## Now playing indicator+
+## Now playing indicator Enhanced
 
-[Show more](https://github.com/itacentury/zen-mods/tree/main/Now%20playing%20indicator%2B)
+[Show more](https://github.com/itacentury/zen-mods/tree/main/Now%20playing%20indicator%20Enhanced)
 
-![Now playing indicator cover image](https://github.com/itacentury/zen-mods/blob/main/Now%20playing%20indicator%2B/image.png)
+![Now playing indicator Enhanced cover image](https://github.com/itacentury/zen-mods/blob/main/Now%20playing%20indicator%20Enhanced/image.png)
