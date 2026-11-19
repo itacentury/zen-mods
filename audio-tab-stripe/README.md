@@ -5,6 +5,11 @@ Display an indicator on the 'Now playing' tab when the sidebar is collapsed. Thi
 
 This is a fork of [benstone326: Now playing indicator](https://github.com/benstone326/zen-mods), which has not been updated for over a year. This fork represents a fresh start with significant improvements and starts at version 1.0.0.
 
+## Version 1.0.2
+
+- Compatible with [Better Active Tab Indicator](https://github.com/HliasOuzounis/zen-browser-better-active-tab-indicator): the active tab indicator is no longer hidden on tabs playing audio, and the stripe follows its color, width and on-right settings
+- Stripe uses the accent color (inactive tabs: 50% transparent) instead of `--zen-colors-primary`/`--zen-colors-secondary`
+
 ## Version 1.0.1
 
 - Fixed indicator not showing on newer Zen versions (replaced the removed `-moz-bool-pref` media query with the `zen-sidebar-expanded` attribute selector)

@@ -1,33 +1,67 @@
+/* Match the color and width of the "Better Active Tab Indicator" mod (falls back to AccentColor) */
+:root {
+	--audio-tab-stripe-color: AccentColor;
+	--audio-tab-stripe-indicator-width: 3px;
+
+	@media (-moz-pref("mod.better-active-tab.custom")) {
+		--audio-tab-stripe-color: var(--mod-better-active-tab-hexcode, AccentColor);
+	}
+	@media (-moz-pref("mod.better-active-tab.tab-width", "4px")) {
+		--audio-tab-stripe-indicator-width: 4px;
+	}
+	@media (-moz-pref("mod.better-active-tab.tab-width", "5px")) {
+		--audio-tab-stripe-indicator-width: 5px;
+	}
+	@media (-moz-pref("mod.better-active-tab.tab-width", "6px")) {
+		--audio-tab-stripe-indicator-width: 6px;
+	}
+	@media (-moz-pref("mod.better-active-tab.tab-width", "7px")) {
+		--audio-tab-stripe-indicator-width: 7px;
+	}
+}
+
 :root:not([zen-sidebar-expanded="true"]) {
 	.tabbrowser-tab:is([soundplaying], [muted]) {
+		/* Use .tab-stack::after, since .tab-background::after is taken by the active tab indicator */
+		& .tab-stack {
+			position: relative;
+		}
+
 		/* Create colored indicator bar on the right edge of tabs with audio */
-		& .tab-background::after {
-			content:'';
+		& .tab-stack::after {
+			content: '';
 			position: absolute;
-			width: 4px !important;
-			border-radius: 4px !important;
-			height: 80% !important;
+			width: 4px;
+			height: 80%;
 			top: 50%;
-			left: calc(100% - 4px) !important;
+			right: 0;
 			transform: translateY(-50%);
-			background-color: var(--zen-colors-primary) !important;
+			border-radius: 4px;
+			background-color: var(--audio-tab-stripe-color);
+			pointer-events: none;
 		}
 
 		/* Make indicator smaller and more subtle for inactive tabs */
-		&:not([selected='true']) .tab-background::after{
-			height: 33.33% !important;
-			background-color: var(--zen-colors-secondary) !important;
+		&:not([selected='true']) .tab-stack::after {
+			height: 33.33%;
+			background-color: color-mix(in srgb, var(--audio-tab-stripe-color) 50%, transparent);
 		}
 
 		/* Expand indicator on hover over inactive tabs */
-		&:not([selected='true']):hover .tab-background::after{
-			height: 80% !important;
-			background-color: var(--zen-colors-secondary) !important;
+		&:not([selected='true']):hover .tab-stack::after {
+			height: 80%;
 		}
 
 		/* Hide the speaker icon when the indicator bar is shown */
 		& .tab-icon-overlay[soundplaying] {
 			display: none !important;
+		}
+	}
+
+	/* Avoid overlapping the active tab indicator when it is placed on the right */
+	@media (-moz-pref("mod.better-active-tab.on-right")) {
+		.tabbrowser-tab:is([soundplaying], [muted])[selected='true'] .tab-stack::after {
+			right: calc(var(--audio-tab-stripe-indicator-width) + 2px);
 		}
 	}
 }
