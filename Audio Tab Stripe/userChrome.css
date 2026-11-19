@@ -1,4 +1,4 @@
-@media not (-moz-bool-pref: "zen.view.sidebar-expanded") {
+:root:not([zen-sidebar-expanded="true"]) {
 	.tabbrowser-tab:is([soundplaying], [muted]) {
 		/* Create colored indicator bar on the right edge of tabs with audio */
 		& .tab-background::after {
