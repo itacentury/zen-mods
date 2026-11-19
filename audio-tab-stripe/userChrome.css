@@ -49,13 +49,13 @@
 			pointer-events: none;
 		}
 
-		/* Bounce like a mini equalizer while sound is actually playing */
+		/* Breathe gently while sound is actually playing */
 		@media (prefers-reduced-motion: no-preference) {
 			&:is(
 				[soundplaying]:not([muted]),
 				:has(> .tab-stack > .tab-content > .tabbrowser-tab[soundplaying]:not([muted]))
 			) > .tab-stack::after {
-				animation: audio-tab-stripe-eq 2.4s ease-in-out infinite;
+				animation: audio-tab-stripe-breathe 2s ease-in-out infinite alternate;
 			}
 		}
 
@@ -73,10 +73,8 @@
 	}
 }
 
-/* translateY(-50%) must be kept in every step to preserve vertical centering */
-@keyframes audio-tab-stripe-eq {
-	0%, 100% { transform: translateY(-50%) scaleY(0.7); }
-	30% { transform: translateY(-50%) scaleY(0.9); }
-	55% { transform: translateY(-50%) scaleY(0.6); }
-	80% { transform: translateY(-50%) scaleY(0.82); }
+/* translateY(-50%) must be kept in both steps to preserve vertical centering */
+@keyframes audio-tab-stripe-breathe {
+	from { transform: translateY(-50%) scaleY(0.6); }
+	to { transform: translateY(-50%) scaleY(0.8); }
 }
