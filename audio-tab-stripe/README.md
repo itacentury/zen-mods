@@ -11,6 +11,7 @@ This is a fork of [benstone326: Now playing indicator](https://github.com/bensto
 - Stripe uses the accent color instead of `--zen-colors-primary`/`--zen-colors-secondary`
 - Stripe looks the same on active, inactive and hovered tabs
 - Stripe bounces like a mini equalizer while sound is playing (static when muted or when reduced motion is enabled)
+- Stripe also shows when audio plays in a Glance tab
 
 ## Version 1.0.1
 

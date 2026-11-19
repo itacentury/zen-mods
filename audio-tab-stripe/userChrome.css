@@ -20,15 +20,23 @@
 	}
 }
 
+/*
+ * Glance opens a separate tab nested inside the parent tab's .tab-content, so the
+ * audio attributes may sit on that nested tab instead of the parent.
+ */
 :root:not([zen-sidebar-expanded="true"]) {
-	.tabbrowser-tab:is([soundplaying], [muted]) {
+	.tabbrowser-tab:not([zen-glance-tab]):is(
+		[soundplaying],
+		[muted],
+		:has(> .tab-stack > .tab-content > .tabbrowser-tab:is([soundplaying], [muted]))
+	) {
 		/* Use .tab-stack::after, since .tab-background::after is taken by the active tab indicator */
-		& .tab-stack {
+		& > .tab-stack {
 			position: relative;
 		}
 
 		/* Create colored indicator bar on the right edge of tabs with audio */
-		& .tab-stack::after {
+		& > .tab-stack::after {
 			content: '';
 			position: absolute;
 			width: 4px;
@@ -43,7 +51,10 @@
 
 		/* Bounce like a mini equalizer while sound is actually playing */
 		@media (prefers-reduced-motion: no-preference) {
-			&[soundplaying]:not([muted]) .tab-stack::after {
+			&:is(
+				[soundplaying]:not([muted]),
+				:has(> .tab-stack > .tab-content > .tabbrowser-tab[soundplaying]:not([muted]))
+			) > .tab-stack::after {
 				animation: audio-tab-stripe-eq 1.2s ease-in-out infinite;
 			}
 		}
@@ -52,12 +63,12 @@
 		& .tab-icon-overlay[soundplaying] {
 			display: none !important;
 		}
-	}
 
-	/* Avoid overlapping the active tab indicator when it is placed on the right */
-	@media (-moz-pref("mod.better-active-tab.on-right")) {
-		.tabbrowser-tab:is([soundplaying], [muted])[selected='true'] .tab-stack::after {
-			right: calc(var(--audio-tab-stripe-indicator-width) + 2px);
+		/* Avoid overlapping the active tab indicator when it is placed on the right */
+		@media (-moz-pref("mod.better-active-tab.on-right")) {
+			&[selected='true'] > .tab-stack::after {
+				right: calc(var(--audio-tab-stripe-indicator-width) + 2px);
+			}
 		}
 	}
 }
