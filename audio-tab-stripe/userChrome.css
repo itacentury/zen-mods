@@ -55,7 +55,7 @@
 				[soundplaying]:not([muted]),
 				:has(> .tab-stack > .tab-content > .tabbrowser-tab[soundplaying]:not([muted]))
 			) > .tab-stack::after {
-				animation: audio-tab-stripe-eq 1.2s ease-in-out infinite;
+				animation: audio-tab-stripe-eq 2.4s ease-in-out infinite;
 			}
 		}
 
@@ -75,9 +75,8 @@
 
 /* translateY(-50%) must be kept in every step to preserve vertical centering */
 @keyframes audio-tab-stripe-eq {
-	0%, 100% { transform: translateY(-50%) scaleY(0.45); }
-	20% { transform: translateY(-50%) scaleY(1); }
-	40% { transform: translateY(-50%) scaleY(0.6); }
-	60% { transform: translateY(-50%) scaleY(0.9); }
-	80% { transform: translateY(-50%) scaleY(0.35); }
+	0%, 100% { transform: translateY(-50%) scaleY(0.7); }
+	30% { transform: translateY(-50%) scaleY(0.9); }
+	55% { transform: translateY(-50%) scaleY(0.6); }
+	80% { transform: translateY(-50%) scaleY(0.82); }
 }
