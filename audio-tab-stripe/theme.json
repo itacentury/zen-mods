@@ -3,7 +3,7 @@
   "name": "Audio Tab Stripe",
   "description": "Shows a colored stripe on the right edge of tabs playing audio when the Zen sidebar is collapsed.",
   "homepage": "https://github.com/itacentury/zen-mods/tree/main/audio-tab-stripe",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "readme": "https://raw.githubusercontent.com/itacentury/zen-mods/main/audio-tab-stripe/README.md",
   "image": "https://raw.githubusercontent.com/itacentury/zen-mods/main/audio-tab-stripe/image.png"
 }

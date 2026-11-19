@@ -41,15 +41,11 @@
 			pointer-events: none;
 		}
 
-		/* Make indicator smaller and more subtle for inactive tabs */
-		&:not([selected='true']) .tab-stack::after {
-			height: 33.33%;
-			background-color: color-mix(in srgb, var(--audio-tab-stripe-color) 50%, transparent);
-		}
-
-		/* Expand indicator on hover over inactive tabs */
-		&:not([selected='true']):hover .tab-stack::after {
-			height: 80%;
+		/* Bounce like a mini equalizer while sound is actually playing */
+		@media (prefers-reduced-motion: no-preference) {
+			&[soundplaying]:not([muted]) .tab-stack::after {
+				animation: audio-tab-stripe-eq 1.2s ease-in-out infinite;
+			}
 		}
 
 		/* Hide the speaker icon when the indicator bar is shown */
@@ -64,4 +60,13 @@
 			right: calc(var(--audio-tab-stripe-indicator-width) + 2px);
 		}
 	}
+}
+
+/* translateY(-50%) must be kept in every step to preserve vertical centering */
+@keyframes audio-tab-stripe-eq {
+	0%, 100% { transform: translateY(-50%) scaleY(0.45); }
+	20% { transform: translateY(-50%) scaleY(1); }
+	40% { transform: translateY(-50%) scaleY(0.6); }
+	60% { transform: translateY(-50%) scaleY(0.9); }
+	80% { transform: translateY(-50%) scaleY(0.35); }
 }
