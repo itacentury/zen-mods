@@ -39,7 +39,7 @@
 		& > .tab-stack::after {
 			content: '';
 			position: absolute;
-			width: 4px;
+			width: var(--audio-tab-stripe-indicator-width);
 			height: 80%;
 			top: 50%;
 			right: 0;
