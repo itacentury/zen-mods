@@ -1,7 +1,7 @@
-# Published Mods in Zen Theme Store
+# Published Mods
 
 ## Audio Tab Stripe
 
-[Show more](https://github.com/itacentury/zen-mods/tree/main/Audio%20Tab%20Stripe)
+[Show more](https://github.com/itacentury/zen-mods/tree/main/audio-tab-stripe)
 
-![Audio Tab Stripe cover image](https://github.com/itacentury/zen-mods/blob/main/Audio%20Tab%20Stripe/image.png)
+![Audio Tab Stripe cover image](https://github.com/itacentury/zen-mods/blob/main/audio-tab-stripe/image.png)
