@@ -7,7 +7,7 @@ This is a fork of [benstone326: Now playing indicator](https://github.com/bensto
 
 ## Version 1.1.0
 
-- Compatible with [Better Active Tab Indicator](https://github.com/HliasOuzounis/zen-browser-better-active-tab-indicator): the active tab indicator is no longer hidden on tabs playing audio, and the stripe follows its color, width and on-right settings
+- Compatible with [Better Active Tab Indicator](https://github.com/HliasOuzounis/zen-browser-better-active-tab-indicator): the active tab indicator is no longer hidden on tabs playing audio, and the stripe follows its color and width settings and moves to the left edge when the indicator is placed on the right
 - Stripe uses the accent color instead of `--zen-colors-primary`/`--zen-colors-secondary`
 - Stripe looks the same on active, inactive and hovered tabs
 - Stripe gently breathes while sound is playing (static when muted or when reduced motion is enabled)

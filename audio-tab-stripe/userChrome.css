@@ -64,10 +64,11 @@
 			display: none !important;
 		}
 
-		/* Avoid overlapping the active tab indicator when it is placed on the right */
+		/* Use the opposite edge when the active tab indicator is placed on the right */
 		@media (-moz-pref("mod.better-active-tab.on-right")) {
-			&[selected='true'] > .tab-stack::after {
-				right: calc(var(--audio-tab-stripe-indicator-width) + 2px);
+			& > .tab-stack::after {
+				right: auto;
+				left: 0;
 			}
 		}
 	}
